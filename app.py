@@ -1,12 +1,11 @@
 from flask import Flask
-from flask import request
 
 app = Flask(__name__)
 
 
 @app.route('/')
+@app.route('/<name>')
 def index(name="world"):
-    name = request.args.get('name', name)
     return "Hello, {}!".format(name)
 
 
