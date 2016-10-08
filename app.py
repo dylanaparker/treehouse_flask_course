@@ -8,5 +8,9 @@ app = Flask(__name__)
 def index(name="world"):
     return "Hello, {}!".format(name)
 
+@app.route('/add/<int:num1>/<int:num2>')
+def add(num1, num2):
+    return str(num1+num2)
+
 
 app.run(debug=True, port=8000)
